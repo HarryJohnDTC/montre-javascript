@@ -29,8 +29,8 @@ body {
 .minute, .heure {
     position: absolute;
     height: 80px;
-    width: 6px;
-    background: #ce13d4;
+    width: 8px;
+    background: #d677da;
     margin: auto;
     top: -23%;
     left: 0;
@@ -38,7 +38,9 @@ body {
     bottom: 0;
     transform-origin: bottom center;
     transform: rotate(0deg);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(221, 18, 211, 0.9);
+    border: 1px solid rgba(221, 18, 211, 0.9);
+    border-radius: 5px;
 }
 
 .minute {
@@ -50,6 +52,8 @@ body {
     left: 0;
     right: 0;
     transform: rotate(90deg);
+    box-shadow: 0 0 10px rgba(18, 221, 28, 0.9);
+    border: 1px solid rgba(18, 221, 28, 0.9);
 }
 
 .seconde {
@@ -144,7 +148,7 @@ body {
 
     .minute, .heure {
         height: 80px; /* Réduction de la longueur des aiguilles */
-        width: 4px;   /* Épaisseur réduite */
+        width: 5px;   /* Épaisseur réduite */
         top: -32%;
     }
 
