@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#container {
+    position: relative; 
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    backdrop-filter: blur(8px); /* Applique le flou aux éléments derrière */
+}
+
+#cercle {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    z-index: 1; 
+}
+
+.minute, .heure {
+    position: absolute;
+    height: 80px;
+    width: 6px;
+    background: #ce13d4;
+    margin: auto;
+    top: -23%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.minute {
+    position: absolute;
+    height: 130px;
+    width: 4px;
+    background: #1cc206;
+    top: -38%;
+    left: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.seconde {
+    position: absolute;
+    height: 90px;
+    width: 2px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -26%;
+    background: white;
+    transform-origin: bottom center;
+    transform: rotate(180deg);
+}
+
+.point {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.number {
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    width: 40px;
+    height: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(199, 230, 203);
+    border-radius: 50%;
+    transform-origin: center center;
+}
+
+#boule1, #boule2 {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.9;
+    z-index: -1; /* Place les boules derrière */
+    animation: moveBoule 10s infinite alternate ease-in-out;
+}
+
+#boule1 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(to bottom right, #ce0f02, #ce13d4);
+    top: 20%;
+    left: 40%;
+    animation-duration: 12s;
+}
+
+#boule2 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to bottom right, #1cc206, #e9ec32);
+    top: 50%;
+    left: 60%;
+    animation-duration: 15s;
+}
+
+@keyframes moveBoule {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, -50px);
+    }
+    100% {
+        transform: translate(-100px, 100px);
+    }
+}
+
+/* Pour les écrans de taille inférieure à 768px (mobiles et tablettes) */
+@media (max-width: 768px) {
+    #cercle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .minute, .heure {
+        height: 80px; /* Réduction de la longueur des aiguilles */
+        width: 4px;   /* Épaisseur réduite */
+        top: -32%;
+    }
+
+    .minute {
+        height: 100px;
+        top: -38%;
+        width: 3px;
+    }
+
+    .seconde {
+        height: 70px;
+        width: 2px;
+        top: -28%;
+    }
+
+    .number {
+        position: absolute;
+        top: 42%;
+        left: 42%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: white;
+        border-radius: 50%;
+        transform-origin: center center;
+    }
+
+    .point {
+        width: 10px;
+        height: 10px;
+    }
+
+ 
+    #boule1 {
+        width: 150px;
+        height: 150px;
+        top: 30%;
+        left: 10%;
+    }
+
+    #boule2 {
+        width: 100px;
+        height: 100px;
+        top: 60%;
+        left: 50%;
+    }
+}
+
