@@ -110,7 +110,7 @@ body {
     height: 250px;
     background: linear-gradient(to bottom right, #ce0f02, #ce13d4);
     top: 20%;
-    left: 40%;
+    left: 35%;
     animation-duration: 12s;
 }
 
@@ -119,7 +119,7 @@ body {
     height: 150px;
     background: linear-gradient(to bottom right, #1cc206, #e9ec32);
     top: 50%;
-    left: 60%;
+    left: 55%;
     animation-duration: 15s;
 }
 
